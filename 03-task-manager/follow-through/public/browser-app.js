@@ -6,6 +6,9 @@ const formAlertDOM = document.querySelector('.form-alert')
 // Load tasks from /api/tasks
 const showTasks = async () => {
   loadingDOM.style.visibility = 'visible'
+  fetch('http://localhost:3000/api/v1/tasks')
+  .then((response) => response.json())
+  .then((data) => console.log(data));
   try {
     const {
       data: { tasks },
@@ -38,6 +41,7 @@ const showTasks = async () => {
       .join('')
     tasksDOM.innerHTML = allTasks
   } catch (error) {
+    console.log(error)
     tasksDOM.innerHTML =
       '<h5 class="empty-list">There was an error, please try later....</h5>'
   }
