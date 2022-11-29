@@ -31,9 +31,6 @@ const getTask = async (req, res) => {
     }
     
 }
-const updateTask = (req, res) => {
-    res.send('update task')
-}
 const deleteTask = async (req, res) => {
     try {
         //some destructuring below
@@ -49,6 +46,13 @@ const deleteTask = async (req, res) => {
     }
 } 
 
+const updateTask = async (req, res) => {
+    try {
+        res.status(200).json()
+    } catch (error) {
+        
+    }
+}
 module.exports ={
     getAllTasks,
     createTask,
